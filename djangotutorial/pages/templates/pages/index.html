@@ -3,38 +3,66 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
-      <!-- basic -->
+      <!-- Basic meta tags -->
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <!-- mobile metas -->
+  
+      <!-- Mobile metas (for mobile responsiveness) -->
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-      <!-- site metas -->
-      <title>Foodfinda</title>
-      <meta name="keywords" content="">
-      <meta name="description" content="">
-      <meta name="author" content="">
-      <!-- bootstrap css -->
+  
+      <!-- SEO meta tags -->
+      <title>YouTube Video Downloader - Free and Fast</title>
+      <meta name="keywords" content="YouTube downloader, free YouTube download, download videos, YouTube video downloader, download YouTube videos online">
+      <meta name="description" content="Free YouTube downloader to download videos easily and quickly. Save YouTube videos in various formats without any hassle.">
+      <meta name="author" content="Your Company Name">
+  
+      <!-- Open Graph meta tags for social sharing -->
+      <meta property="og:title" content="YouTube Video Downloader - Free and Fast">
+      <meta property="og:description" content="Free YouTube downloader to download videos easily and quickly. Save YouTube videos in various formats without any hassle.">
+      <meta property="og:image" content="{% static 'pages/images/og-image.jpg' %}">
+      <meta property="og:url" content="https://www.youtube.alphasius.com">
+      <meta property="og:type" content="website">
+  
+      <!-- Twitter Card meta tags -->
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:title" content="YouTube Video Downloader - Free and Fast">
+      <meta name="twitter:description" content="Download videos from YouTube quickly and for free with our fast and easy YouTube downloader tool.">
+      <meta name="twitter:image" content="{% static 'pages/images/logo.png' %}">
+  
+      <!-- Bootstrap CSS -->
       <link rel="stylesheet" type="text/css" href="{% static 'pages/css/bootstrap.min.css' %}">
-      <!-- style css -->
+  
+      <!-- Main style CSS -->
       <link rel="stylesheet" type="text/css" href="{% static 'pages/css/style.css' %}">
-      <!-- Responsive-->
+  
+      <!-- Responsive CSS -->
       <link rel="stylesheet" href="{% static 'pages/css/responsive.css' %}">
-      <!-- fevicon -->
-      <link rel="icon" href="{% static 'pages/images/fevicon.png' %}" type="image/gif" />
+  
+      <!-- Favicon -->
+      <link rel="icon" href="{% static 'pages/images/fevicon.png' %}" type="image/png">
+  
       <!-- Scrollbar Custom CSS -->
       <link rel="stylesheet" href="{% static 'pages/css/jquery.mCustomScrollbar.min.css' %}">
-      <!-- Tweaks for older IEs-->
-      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-      <!-- fonts -->
+  
+      <!-- Font Awesome for icons -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  
+      <!-- Google Fonts -->
       <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Sen:wght@400;700;800&display=swap" rel="stylesheet">
-      <!-- owl stylesheets --> 
+  
+      <!-- Owl Carousel for image/carousel components -->
       <link rel="stylesheet" href="{% static 'pages/css/owl.carousel.min.css' %}">
       <link rel="stylesheet" href="{% static 'pages/css/owl.theme.default.min.css' %}">
+  
+      <!-- Fancybox for popup functionality -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+  
+      <!-- Datepicker CSS -->
       <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
-   </head>
+  </head>
+  
    <body>
       <!-- header section start -->
       <div class="container-fluid">
