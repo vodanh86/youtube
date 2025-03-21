@@ -1,0 +1,69 @@
+{% load static %}
+<div class="blog_section_2 layout_padding">
+    <div class="container">
+       <div class="row">
+          <div class="col-md-6">
+             <div class="blog_img"><img src="{{info.thumbnail}}"></div>
+          </div>
+          <div class="col-md-6">
+             <div class="blog_taital_main">
+                <h1 class="blog_text">{{ info.title }}</h1>
+                <p class="lorem_text"> {{ info.description|slice:":400" }}{% if info.description|length > 100 %}...{% endif %}</p>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>
+<div class="container">
+    <div class="row">
+       <div class="col-sm-12">
+          <h1 class="service_taital">Download links</h1>
+       </div>
+    </div>
+    <div class="service_section_2">
+       <div class="row">
+          <div class="col">
+             <div class="service_box">
+                <div class="breakfast_img"><img src="{% static 'pages/images/breakfast-img.png' %}"></div>
+             </div>
+             <h4 class="breakfast_text">Breakfast</h4>
+             <div class="seemore_bt"><a href="#">See More</a></div>
+          </div>
+          <div class="col">
+             <div class="service_box">
+                <div class="breakfast_img"><img src="{% static 'pages/images/delivery-img.png' %}"></div>
+             </div>
+             <h4 class="breakfast_text">Delivery</h4>
+             <div class="seemore_bt"><a href="#">See More</a></div>
+          </div>
+          <div class="col">
+             <div class="service_box">
+                <div class="breakfast_img"><img src="{% static 'pages/images/dinner-img.png' %}"></div>
+             </div>
+             <h4 class="breakfast_text">Dinner</h4>
+             <div class="seemore_bt"><a href="#">See More</a></div>
+          </div>
+          <div class="col">
+             <div class="service_box">
+                <div class="breakfast_img"><img src="{% static 'pages/images/coffee-img.png' %}"></div>
+             </div>
+             <h4 class="breakfast_text">Coffee</h4>
+             <div class="seemore_bt"><a href="#">See More</a></div>
+          </div>
+          <div class="col">
+             <div class="service_box">
+                <div class="breakfast_img"><img src="{% static 'pages/images/alcohol-img.png' %}"></div>
+             </div>
+             <h4 class="breakfast_text">Alcohol</h4>
+             <div class="seemore_bt"><a href="#">See More</a></div>
+          </div>
+          <div class="col">
+             <div class="service_box">
+                <div class="breakfast_img"><img src="{% static 'pages/images/diningtable-img.png' %}"></div>
+             </div>
+             <h4 class="breakfast_text">Diningtable</h4>
+             <div class="seemore_bt"><a href="#">See More</a></div>
+          </div>
+       </div>
+    </div>
+ </div>

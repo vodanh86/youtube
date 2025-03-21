@@ -347,7 +347,7 @@ button {
     height: auto;
     background-repeat: no-repeat;
     background-size: 100%;
-    padding-bottom: 100px;
+    padding-bottom: 10px;
 }
 
 .menu_main {
@@ -441,10 +441,21 @@ button {
 .ordernow_bt {
     width: 200px;
     margin: 0 auto;
-    padding-top: 50px;
+    padding-top: 30px;
 }
 
 .ordernow_bt a {
+    width: 100%;
+    float: left;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #FF0000;
+    padding: 10px 0px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.ordernow_bt input {
     width: 100%;
     float: left;
     font-size: 20px;
@@ -463,7 +474,7 @@ button {
 .banner_main {
     display: flex;
     width: 100%;
-    margin-top: 75px;
+    margin-top: 35px;
 }
 
 .dropdown,
@@ -688,7 +699,7 @@ input.form-control::placeholder {
     float: left;
     background-image: url(../images/about-bg.png);
     height: auto;
-    padding: 20px 0px 70px 0pc;
+    padding: 2px 0px 10px 0pc;
     background-size: 100%;
     background-repeat: no-repeat;
 }
@@ -696,7 +707,6 @@ input.form-control::placeholder {
 .blog_taital_main {
     width: 100%;
     float: left;
-    padding-top: 40px;
 }
 
 .blog_text {
@@ -1229,5 +1239,23 @@ input.form-control::placeholder {
     margin-top: 90px;
 }
 
+.overlay{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background: rgba(255,255,255,0.8) url("../images/loader.gif") center no-repeat;
+}
 
+/* Turn off scrollbar when body element has the loading class */
+body.loading{
+    overflow: hidden;   
+}
+/* Make spinner image visible when body element has the loading class */
+body.loading .overlay{
+    display: block;
+}
 /* copyright section end 

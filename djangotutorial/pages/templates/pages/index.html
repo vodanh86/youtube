@@ -2,469 +2,549 @@
 
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <!-- Basic meta tags -->
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-      <!-- Mobile metas (for mobile responsiveness) -->
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-  
-      <!-- SEO meta tags -->
-      <title>YouTube Video Downloader - Free and Fast</title>
-      <meta name="keywords" content="YouTube downloader, free YouTube download, download videos, YouTube video downloader, download YouTube videos online">
-      <meta name="description" content="Free YouTube downloader to download videos easily and quickly. Save YouTube videos in various formats without any hassle.">
-      <meta name="author" content="Your Company Name">
-  
-      <!-- Open Graph meta tags for social sharing -->
-      <meta property="og:title" content="YouTube Video Downloader - Free and Fast">
-      <meta property="og:description" content="Free YouTube downloader to download videos easily and quickly. Save YouTube videos in various formats without any hassle.">
-      <meta property="og:image" content="{% static 'pages/images/og-image.jpg' %}">
-      <meta property="og:url" content="https://www.youtube.alphasius.com">
-      <meta property="og:type" content="website">
-  
-      <!-- Twitter Card meta tags -->
-      <meta name="twitter:card" content="summary_large_image">
-      <meta name="twitter:title" content="YouTube Video Downloader - Free and Fast">
-      <meta name="twitter:description" content="Download videos from YouTube quickly and for free with our fast and easy YouTube downloader tool.">
-      <meta name="twitter:image" content="{% static 'pages/images/logo.png' %}">
-  
-      <!-- Bootstrap CSS -->
-      <link rel="stylesheet" type="text/css" href="{% static 'pages/css/bootstrap.min.css' %}">
-  
-      <!-- Main style CSS -->
-      <link rel="stylesheet" type="text/css" href="{% static 'pages/css/style.css' %}">
-  
-      <!-- Responsive CSS -->
-      <link rel="stylesheet" href="{% static 'pages/css/responsive.css' %}">
-  
-      <!-- Favicon -->
-      <link rel="icon" href="{% static 'pages/images/fevicon.png' %}" type="image/png">
-  
-      <!-- Scrollbar Custom CSS -->
-      <link rel="stylesheet" href="{% static 'pages/css/jquery.mCustomScrollbar.min.css' %}">
-  
-      <!-- Font Awesome for icons -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-  
-      <!-- Google Fonts -->
-      <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Sen:wght@400;700;800&display=swap" rel="stylesheet">
-  
-      <!-- Owl Carousel for image/carousel components -->
-      <link rel="stylesheet" href="{% static 'pages/css/owl.carousel.min.css' %}">
-      <link rel="stylesheet" href="{% static 'pages/css/owl.theme.default.min.css' %}">
-  
-      <!-- Fancybox for popup functionality -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-  
-      <!-- Datepicker CSS -->
-      <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
-  </head>
-  
-   <body>
-      <!-- header section start -->
-      <div class="container-fluid">
-         <div class="header_section">
-            <div class="container">
-               <nav class="navbar navbar-light bg-light justify-content-between">
-                  <div id="mySidenav" class="sidenav">
-                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                     <a href="index.html">Home</a>
-                     <a href="service.html">Services</a>
-                     <a href="about.html">About</a>
-                     <!--a href="blog.html">Blog</a>
+
+<head>
+   <!-- Basic meta tags -->
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <!-- Mobile metas (for mobile responsiveness) -->
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+
+   <!-- SEO meta tags -->
+   <title>YouTube Video Downloader - Free and Fast</title>
+   <meta name="keywords"
+      content="YouTube downloader, free YouTube download, download videos, YouTube video downloader, download YouTube videos online">
+   <meta name="description"
+      content="Free YouTube downloader to download videos easily and quickly. Save YouTube videos in various formats without any hassle.">
+   <meta name="author" content="Your Company Name">
+
+   <!-- Open Graph meta tags for social sharing -->
+   <meta property="og:title" content="YouTube Video Downloader - Free and Fast">
+   <meta property="og:description"
+      content="Free YouTube downloader to download videos easily and quickly. Save YouTube videos in various formats without any hassle.">
+   <meta property="og:image" content="{% static 'pages/images/og-image.jpg' %}">
+   <meta property="og:url" content="https://www.youtube.alphasius.com">
+   <meta property="og:type" content="website">
+
+   <!-- Twitter Card meta tags -->
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:title" content="YouTube Video Downloader - Free and Fast">
+   <meta name="twitter:description"
+      content="Download videos from YouTube quickly and for free with our fast and easy YouTube downloader tool.">
+   <meta name="twitter:image" content="{% static 'pages/images/logo.png' %}">
+
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" type="text/css" href="{% static 'pages/css/bootstrap.min.css' %}">
+
+   <!-- Main style CSS -->
+   <link rel="stylesheet" type="text/css" href="{% static 'pages/css/style.css' %}">
+
+   <!-- Responsive CSS -->
+   <link rel="stylesheet" href="{% static 'pages/css/responsive.css' %}">
+
+   <!-- Favicon -->
+   <link rel="icon" href="{% static 'pages/images/fevicon.png' %}" type="image/png">
+
+   <!-- Scrollbar Custom CSS -->
+   <link rel="stylesheet" href="{% static 'pages/css/jquery.mCustomScrollbar.min.css' %}">
+
+   <!-- Font Awesome for icons -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+   <!-- Google Fonts -->
+   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Sen:wght@400;700;800&display=swap"
+      rel="stylesheet">
+
+   <!-- Owl Carousel for image/carousel components -->
+   <link rel="stylesheet" href="{% static 'pages/css/owl.carousel.min.css' %}">
+   <link rel="stylesheet" href="{% static 'pages/css/owl.theme.default.min.css' %}">
+
+   <!-- Fancybox for popup functionality -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
+      media="screen">
+
+   <!-- Datepicker CSS -->
+   <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+   <div class="overlay"></div>
+   <!-- header section start -->
+   <div class="container-fluid">
+      <div class="header_section">
+         <div class="container">
+            <nav class="navbar navbar-light bg-light justify-content-between">
+               <div id="mySidenav" class="sidenav">
+                  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                  <a href="index.html">Home</a>
+                  <a href="service.html">Services</a>
+                  <a href="about.html">About</a>
+                  <!--a href="blog.html">Blog</a>
                      <a href="shop.html">Shop</a-->
-                     <a href="contacts.html">Contacts</a>
-                  </div>
-                  <form class="form-inline ">
-                     <div class="login_text"><a href="#"><i class="fa fa-phone" aria-hidden="true"></i><span class="padding_left10">Call : +01 1234567890</span></a></div>
-                  </form>
-                  <a class="logo" href="index.html"><img src="{% static 'pages/images/logo.png' %}"></a></a>
-                  <span class="toggle" onclick="openNav()"><i class="fa fa-bars"></i></span>
-                  <div class="login_text"><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i><span class="padding_left10">Email : Demo@gmail.com</span></a></div>
-               </nav>
-            </div>
+                  <a href="contacts.html">Contacts</a>
+               </div>
+               <form class="form-inline ">
+                  <div class="login_text"><a href="#"><i class="fa fa-phone" aria-hidden="true"></i><span
+                           class="padding_left10">Call : +84 394384891</span></a></div>
+               </form>
+               <a class="logo" href="index.html"><img src="{% static 'pages/images/logo.png' %}"></a></a>
+               <span class="toggle" onclick="openNav()"><i class="fa fa-bars"></i></span>
+               <div class="login_text"><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i><span
+                        class="padding_left10">Email : cuongdm17286@gmail.com</span></a></div>
+            </nav>
          </div>
       </div>
-      <!-- header section end -->
-      <!-- layout main section start -->
-      <div class="container-fluid">
-         <div class="layout_main">
-            <!-- banner section start -->
-            <div class="banner_section">
-               <div class="container">
-                  <div class="menu_main">
-                     <div class="custome_menu">
-                        <ul>
-                           <li class="active"><a href="index.html">Home</a></li>
-                           <li><a href="service.html">Services</a></li>
-                           <li><a href="about.html">About</a></li>
-                           <!--li><a href="blog.html">Blog</a></li>
+   </div>
+   <!-- header section end -->
+   <!-- layout main section start -->
+   <div class="container-fluid">
+      <div class="layout_main">
+         <!-- banner section start -->
+         <div class="banner_section">
+            <div class="container">
+               <div class="menu_main">
+                  <div class="custome_menu">
+                     <ul>
+                        <li class="active"><a href="index.html">Home</a></li>
+                        <li><a href="service.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <!--li><a href="blog.html">Blog</a></li>
                            <li><a href="shop.html">Shop</a></li-->
-                           <li><a href="contact.html">Contacts</a></li>
-                        </ul>
+                        <li><a href="contact.html">Contacts</a></li>
+                     </ul>
+                  </div>
+                  <div class="login_menu">
+                     <ul>
+                        <li><a href="#">Login</a></li>
+                        <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div id="main_slider" class="carousel slide" data-ride="carousel">
+               <div class="carousel-inner">
+                  <form id="download-form">
+                     <div class="container">
+                        <div class="row">
+                           <div class="col-md-12">
+                              <h1 class="banner_taital">Copy the link you want to download from</h1>
+                              <h1 class="banner_text">YOUTUBE</h1>
+                              
+                              <div class="ordernow_bt"><h4 class="customer_text" id="error_msg"></h4></div>
+                              <div class="banner_main">
+                                 <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button"
+                                       id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                       aria-expanded="false">All Category
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                       <a class="dropdown-item" href="#">Youtube Video</a>
+                                       <a class="dropdown-item" href="#">Youtube Playlist</a>
+                                    </div>
+                                 </div>
+                                 <div class="main">
+                                    <!-- Another variation with a button -->
+                                    <div class="input-group">
+                                       <input type="text" name="youtube-url" class="form-control"
+                                          placeholder="Download">
+                                       <div class="input-group-append">
+                                          <button class="btn btn-secondary" type="button"
+                                             style="background-color: #ffffff; border-color:#ffffff ">
+                                             <i class="fa fa-search" style="color: #191919;"></i>
+                                          </button>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div class="ordernow_bt"><input type="submit" class="btn btn-primary" id="submitBtn"
+                                    value="Download Now" />
+                              </div>
+                              
+                           </div>
+                        </div>
                      </div>
-                     <div class="login_menu">
-                        <ul>
-                           <li><a href="#">Login</a></li>
-                           <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-                        </ul>
+                  </form>
+               </div>
+            </div>
+         </div>
+         <!-- banner section end -->
+         <!-- service section start -->
+         <div class="service_section layout_padding">
+         </div>
+         <!-- service section end -->
+         <!-- blog section start -->
+         <div class="blog_section layout_padding">
+            <div class="container">
+               <div class="row">
+                  <div class="col-sm-12">
+                     <h1 class="blog_taital">Collections Food In city</h1>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="blog_section_2 layout_padding">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-6">
+                     <div class="blog_img"><img src="{% static 'pages/images/blog-img1.png' %}"></div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="blog_taital_main">
+                        <h1 class="blog_text">This Week going</h1>
+                        <p class="lorem_text">Long established fact that a reader will be distracted by the readable
+                           content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a
+                           more-or-less normal distribution of letters, as opposed</p>
+                        <div class="readmore_btn"><a href="#">Read More</a></div>
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="blog_img"><img src="{% static 'pages/images/blog-img2.png' %}"></div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="blog_taital_main">
+                        <h1 class="blog_text">Just Delivery Food</h1>
+                        <p class="lorem_text">Long established fact that a reader will be distracted by the readable
+                           content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a
+                           more-or-less normal distribution of letters, as opposed</p>
+                        <div class="readmore_btn"><a href="#">Read More</a></div>
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="blog_img"><img src="{% static 'pages/images/blog-img3.png' %}"></div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="blog_taital_main">
+                        <h1 class="blog_text">Newly Opened Cafe</h1>
+                        <p class="lorem_text">Long established fact that a reader will be distracted by the readable
+                           content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a
+                           more-or-less normal distribution of letters, as opposed</p>
+                        <div class="readmore_btn"><a href="#">Read More</a></div>
                      </div>
                   </div>
                </div>
-               <div id="main_slider" class="carousel slide" data-ride="carousel">
+            </div>
+         </div>
+         <!-- blog section end -->
+         <!-- shop section start -->
+         <div class="shop_section layout_padding">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-6">
+                     <h1 class="shop_taital">Get the <br><span style="color: #18191a;">Food Finda App</span></h1>
+                     <p class="shop_text">Long established fact that a reader will be distracted by the readable content
+                        of a page when looking at its layout. The point of using Lorem Ipsum is that it has a
+                        more-or-less normal distribution of letters, as</p>
+                     <div class="app_icon_main">
+                        <div class="app_icon"><img src="{% static 'pages/images/icon-1.png' %}"></div>
+                        <div class="app_icon"><img src="{% static 'pages/images/icon-2.png' %}"></div>
+                     </div>
+                     <div class="download_bt"><a href="#">Download Now</a></div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="mobile_img"><img src="{% static 'pages/images/mobile-img.png' %}"></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- shop section end -->
+         <!-- testimonial section start -->
+         <div class="testimonial_section layout_padding">
+            <div class="container">
+               <div class="row">
+                  <div class="col-sm-12">
+                     <h1 class="testimonial_taital">Customers Says</h1>
+                  </div>
+               </div>
+               <div id="my_slider" class="carousel slide" data-ride="carousel">
                   <div class="carousel-inner">
                      <div class="carousel-item active">
-                        <div class="container">
+                        <div class="testimonial_section_2">
                            <div class="row">
-                              <div class="col-md-12">
-                                 <h1 class="banner_taital">Copy the link you want to download from</h1>
-                                 <h1 class="banner_text">YOUTUBE</h1>
-                                 <div class="banner_main">
-                                    <div class="dropdown">
-                                       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All Category 
-                                       </button>
-                                       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                          <a class="dropdown-item" href="#">Youtube Video</a>
-                                          <a class="dropdown-item" href="#">Youtube Playlist</a>
-                                       </div>
-                                    </div>
-                                    <div class="main">
-                                       <!-- Another variation with a button -->
-                                       <div class="input-group">
-                                          <input type="text" class="form-control" placeholder="Download">
-                                          <div class="input-group-append">
-                                             <button class="btn btn-secondary" type="button" style="background-color: #ffffff; border-color:#ffffff ">
-                                             <i class="fa fa-search" style="color: #191919;"></i>
-                                             </button>
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                                 <div class="ordernow_bt"><a href="#">Download Now</a></div>
+                              <div class="col-md-4">
+                                 <h4 class="customer_text">Loliy Mark</h4>
+                                 <p class="many_text">Now use Lorem Ipsum as their default model text, and a search for
+                                    'loremnow use Lorem Ipsum as their default model text, and a search for 'lorem</p>
+                              </div>
+                              <div class="col-md-4">
+                                 <h4 class="customer_text">Den Mark</h4>
+                                 <p class="many_text">Now use Lorem Ipsum as their default model text, and a search for
+                                    'loremnow use Lorem Ipsum as their default model text, and a search for 'lorem</p>
+                              </div>
+                              <div class="col-md-4">
+                                 <h4 class="customer_text">Jonshon Mark</h4>
+                                 <p class="many_text">Now use Lorem Ipsum as their default model text, and a search for
+                                    'loremnow use Lorem Ipsum as their default model text, and a search for 'lorem</p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="carousel-item">
+                        <div class="testimonial_section_2">
+                           <div class="row">
+                              <div class="col-md-4">
+                                 <h4 class="customer_text">Loliy Mark</h4>
+                                 <p class="many_text">Now use Lorem Ipsum as their default model text, and a search for
+                                    'loremnow use Lorem Ipsum as their default model text, and a search for 'lorem</p>
+                              </div>
+                              <div class="col-md-4">
+                                 <h4 class="customer_text">Den Mark</h4>
+                                 <p class="many_text">Now use Lorem Ipsum as their default model text, and a search for
+                                    'loremnow use Lorem Ipsum as their default model text, and a search for 'lorem</p>
+                              </div>
+                              <div class="col-md-4">
+                                 <h4 class="customer_text">Jonshon Mark</h4>
+                                 <p class="many_text">Now use Lorem Ipsum as their default model text, and a search for
+                                    'loremnow use Lorem Ipsum as their default model text, and a search for 'lorem</p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="carousel-item">
+                        <div class="testimonial_section_2">
+                           <div class="row">
+                              <div class="col-md-4">
+                                 <h4 class="customer_text">Loliy Mark</h4>
+                                 <p class="many_text">Now use Lorem Ipsum as their default model text, and a search for
+                                    'loremnow use Lorem Ipsum as their default model text, and a search for 'lorem</p>
+                              </div>
+                              <div class="col-md-4">
+                                 <h4 class="customer_text">Den Mark</h4>
+                                 <p class="many_text">Now use Lorem Ipsum as their default model text, and a search for
+                                    'loremnow use Lorem Ipsum as their default model text, and a search for 'lorem</p>
+                              </div>
+                              <div class="col-md-4">
+                                 <h4 class="customer_text">Jonshon Mark</h4>
+                                 <p class="many_text">Now use Lorem Ipsum as their default model text, and a search for
+                                    'loremnow use Lorem Ipsum as their default model text, and a search for 'lorem</p>
                               </div>
                            </div>
                         </div>
                      </div>
                   </div>
-               </div>
-            </div>
-            <!-- banner section end -->
-            <!-- service section start -->
-            <div class="service_section layout_padding">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-sm-12">
-                        <h1 class="service_taital">Quick Searches</h1>
-                     </div>
-                  </div>
-                  <div class="service_section_2">
-                     <div class="row">
-                        <div class="col">
-                           <div class="service_box">
-                              <div class="breakfast_img"><img src="{% static 'pages/images/breakfast-img.png' %}"></div>
-                           </div>
-                           <h4 class="breakfast_text">Breakfast</h4>
-                           <div class="seemore_bt"><a href="#">See More</a></div>
-                        </div>
-                        <div class="col">
-                           <div class="service_box">
-                              <div class="breakfast_img"><img src="{% static 'pages/images/delivery-img.png' %}"></div>
-                           </div>
-                           <h4 class="breakfast_text">Delivery</h4>
-                           <div class="seemore_bt"><a href="#">See More</a></div>
-                        </div>
-                        <div class="col">
-                           <div class="service_box">
-                              <div class="breakfast_img"><img src="{% static 'pages/images/dinner-img.png' %}"></div>
-                           </div>
-                           <h4 class="breakfast_text">Dinner</h4>
-                           <div class="seemore_bt"><a href="#">See More</a></div>
-                        </div>
-                        <div class="col">
-                           <div class="service_box">
-                              <div class="breakfast_img"><img src="{% static 'pages/images/coffee-img.png' %}"></div>
-                           </div>
-                           <h4 class="breakfast_text">Coffee</h4>
-                           <div class="seemore_bt"><a href="#">See More</a></div>
-                        </div>
-                        <div class="col">
-                           <div class="service_box">
-                              <div class="breakfast_img"><img src="{% static 'pages/images/alcohol-img.png' %}"></div>
-                           </div>
-                           <h4 class="breakfast_text">Alcohol</h4>
-                           <div class="seemore_bt"><a href="#">See More</a></div>
-                        </div>
-                        <div class="col">
-                           <div class="service_box">
-                              <div class="breakfast_img"><img src="{% static 'pages/images/diningtable-img.png' %}"></div>
-                           </div>
-                           <h4 class="breakfast_text">Diningtable</h4>
-                           <div class="seemore_bt"><a href="#">See More</a></div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <!-- service section end -->
-            <!-- blog section start -->
-            <div class="blog_section layout_padding">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-sm-12">
-                        <h1 class="blog_taital">Collections Food In city</h1>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="blog_section_2 layout_padding">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-md-6">
-                        <div class="blog_img"><img src="{% static 'pages/images/blog-img1.png' %}"></div>
-                     </div>
-                     <div class="col-md-6">
-                        <div class="blog_taital_main">
-                           <h1 class="blog_text">This Week going</h1>
-                           <p class="lorem_text">Long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed</p>
-                           <div class="readmore_btn"><a href="#">Read More</a></div>
-                        </div>
-                     </div>
-                     <div class="col-md-6">
-                        <div class="blog_img"><img src="{% static 'pages/images/blog-img2.png' %}"></div>
-                     </div>
-                     <div class="col-md-6">
-                        <div class="blog_taital_main">
-                           <h1 class="blog_text">Just Delivery Food</h1>
-                           <p class="lorem_text">Long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed</p>
-                           <div class="readmore_btn"><a href="#">Read More</a></div>
-                        </div>
-                     </div>
-                     <div class="col-md-6">
-                        <div class="blog_img"><img src="{% static 'pages/images/blog-img3.png' %}"></div>
-                     </div>
-                     <div class="col-md-6">
-                        <div class="blog_taital_main">
-                           <h1 class="blog_text">Newly Opened Cafe</h1>
-                           <p class="lorem_text">Long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed</p>
-                           <div class="readmore_btn"><a href="#">Read More</a></div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <!-- blog section end -->
-            <!-- shop section start -->
-            <div class="shop_section layout_padding">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-md-6">
-                        <h1 class="shop_taital">Get the <br><span style="color: #18191a;">Food Finda App</span></h1>
-                        <p class="shop_text">Long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as</p>
-                        <div class="app_icon_main">
-                           <div class="app_icon"><img src="{% static 'pages/images/icon-1.png' %}"></div>
-                           <div class="app_icon"><img src="{% static 'pages/images/icon-2.png' %}"></div>
-                        </div>
-                        <div class="download_bt"><a href="#">Download Now</a></div>
-                     </div>
-                     <div class="col-md-6">
-                        <div class="mobile_img"><img src="{% static 'pages/images/mobile-img.png' %}"></div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <!-- shop section end -->
-            <!-- testimonial section start -->
-            <div class="testimonial_section layout_padding">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-sm-12">
-                        <h1 class="testimonial_taital">Customers Says</h1>
-                     </div>
-                  </div>
-                  <div id="my_slider" class="carousel slide" data-ride="carousel">
-                     <div class="carousel-inner">
-                        <div class="carousel-item active">
-                           <div class="testimonial_section_2">
-                              <div class="row">
-                                 <div class="col-md-4">
-                                    <h4 class="customer_text">Loliy Mark</h4>
-                                    <p class="many_text">Now use Lorem Ipsum as their default model text, and a search for 'loremnow use Lorem Ipsum as their default model text, and a search for 'lorem</p>
-                                 </div>
-                                 <div class="col-md-4">
-                                    <h4 class="customer_text">Den Mark</h4>
-                                    <p class="many_text">Now use Lorem Ipsum as their default model text, and a search for 'loremnow use Lorem Ipsum as their default model text, and a search for 'lorem</p>
-                                 </div>
-                                 <div class="col-md-4">
-                                    <h4 class="customer_text">Jonshon Mark</h4>
-                                    <p class="many_text">Now use Lorem Ipsum as their default model text, and a search for 'loremnow use Lorem Ipsum as their default model text, and a search for 'lorem</p>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="carousel-item">
-                           <div class="testimonial_section_2">
-                              <div class="row">
-                                 <div class="col-md-4">
-                                    <h4 class="customer_text">Loliy Mark</h4>
-                                    <p class="many_text">Now use Lorem Ipsum as their default model text, and a search for 'loremnow use Lorem Ipsum as their default model text, and a search for 'lorem</p>
-                                 </div>
-                                 <div class="col-md-4">
-                                    <h4 class="customer_text">Den Mark</h4>
-                                    <p class="many_text">Now use Lorem Ipsum as their default model text, and a search for 'loremnow use Lorem Ipsum as their default model text, and a search for 'lorem</p>
-                                 </div>
-                                 <div class="col-md-4">
-                                    <h4 class="customer_text">Jonshon Mark</h4>
-                                    <p class="many_text">Now use Lorem Ipsum as their default model text, and a search for 'loremnow use Lorem Ipsum as their default model text, and a search for 'lorem</p>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="carousel-item">
-                           <div class="testimonial_section_2">
-                              <div class="row">
-                                 <div class="col-md-4">
-                                    <h4 class="customer_text">Loliy Mark</h4>
-                                    <p class="many_text">Now use Lorem Ipsum as their default model text, and a search for 'loremnow use Lorem Ipsum as their default model text, and a search for 'lorem</p>
-                                 </div>
-                                 <div class="col-md-4">
-                                    <h4 class="customer_text">Den Mark</h4>
-                                    <p class="many_text">Now use Lorem Ipsum as their default model text, and a search for 'loremnow use Lorem Ipsum as their default model text, and a search for 'lorem</p>
-                                 </div>
-                                 <div class="col-md-4">
-                                    <h4 class="customer_text">Jonshon Mark</h4>
-                                    <p class="many_text">Now use Lorem Ipsum as their default model text, and a search for 'loremnow use Lorem Ipsum as their default model text, and a search for 'lorem</p>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <a class="carousel-control-prev" href="#my_slider" role="button" data-slide="prev">
+                  <a class="carousel-control-prev" href="#my_slider" role="button" data-slide="prev">
                      <i class="fa fa-arrow-left"></i>
-                     </a>
-                     <a class="carousel-control-next" href="#my_slider" role="button" data-slide="next">
+                  </a>
+                  <a class="carousel-control-next" href="#my_slider" role="button" data-slide="next">
                      <i class="fa fa-arrow-right"></i>
-                     </a>
-                  </div>
+                  </a>
                </div>
             </div>
-            <!-- testimonial section end -->
-            <!-- contact section start -->
-            <div class="contact_section layout_padding">
-               <div class="container">
-                  <div class="contact_section_2">
-                     <div class="row">
-                        <div class="col-md-12">
-                           <h1 class="contact_taital">Get In Touch</h1>
-                           <form action="">
-                              <div class="mail_section_1">
-                                 <input type="text" class="mail_text" placeholder="Name" name="Name">
-                                 <input type="text" class="mail_text" placeholder="Phone Number" name="Phone Number"> 
-                                 <input type="text" class="mail_text" placeholder="Email" name="Email">
-                                 <textarea class="massage-bt" placeholder="Massage" rows="5" id="comment" name="Massage"></textarea>
-                                 <div class="send_bt"><a href="#">SEND</a></div>
-                              </div>
-                           </form>
-                        </div>
-                     </div>
-                     <!-- order section start -->
-                     <div class="order_section">
-                        <div class="order_taital_main">
-                           <h1 class="order_taital">Order Best food at time</h1>
-                           <div class="order_bt"><a href="#">Order Now</a></div>
-                        </div>
-                     </div>
-                     <!-- order section end -->
-                  </div>
-               </div>
-            </div>
-            <!-- contact section end -->
-            <!-- footer section start -->
-            <div class="footer_section">
-               <div class="container">
-                  <div class="footer_sectio_2">
-                     <div class="row">
-                        <div class="col-lg-3 col-md-6">
-                           <h2 class="footer_logo">Foodfinda</h2>
-                           <p class="footer_text">t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of </p>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                           <h2 class="useful_text">Navigation</h2>
-                           <div class="footer_menu">
-                              <ul>
-                                 <li class="active"><a href="index.html">Home</a></li>
-                                 <li><a href="about.html">About</a></li>
-                                 <li><a href="location.html">Location</a></li>
-                                 <li><a href="service.html">Services</a></li>
-                                 <li><a href="features.html">Features</a></li>
-                              </ul>
-                           </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                           <h2 class="useful_text">Contact Info</h2>
-                           <p class="address_text">Office Address</p>
-                           <div class="map_icon"><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i><span class="padding_left15">Loram ipusm New York, NY 36524</span></a></div>
-                           <p class="address_text">Customer Service:</p>
-                           <div class="map_icon"><a href="#"><i class="fa fa-phone" aria-hidden="true"></i><span class="padding_left15">( +01 1234567890 )</span></a></div>
-                           <div class="map_icon"><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i><span class="padding_left15">demo@gmail.com</span></a></div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                           <h2 class="useful_text">Discover</h2>
-                           <div class="subscribe_menu">
-                              <ul>
-                                 <li><a href="#">Help</a></li>
-                                 <li><a href="#">How It Works</a></li>
-                                 <li><a href="#">subscribe</a></li>
-                                 <li><a href="contact.html">Contact Us</a></li>
-                              </ul>
-                           </div>
-                           <div class="social_icon">
-                              <ul>
-                                 <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                 <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                 <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                 <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                              </ul>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <!-- footer section end -->
          </div>
-      </div>
-      <!-- layout main section end -->
-      <!-- copyright section start -->
-      <div class="copyright_section">
-         <div class="container">
-            <p class="copyright_text">2020 All Rights Reserved. Design by <a href="https://html.design">Free html  Templates</a></p>
+         <!-- testimonial section end -->
+         <!-- contact section start -->
+         <div class="contact_section layout_padding">
+            <div class="container">
+               <div class="contact_section_2">
+                  <div class="row">
+                     <div class="col-md-12">
+                        <h1 class="contact_taital">Get In Touch</h1>
+                        <form action="">
+                           <div class="mail_section_1">
+                              <input type="text" class="mail_text" placeholder="Name" name="Name">
+                              <input type="text" class="mail_text" placeholder="Phone Number" name="Phone Number">
+                              <input type="text" class="mail_text" placeholder="Email" name="Email">
+                              <textarea class="massage-bt" placeholder="Massage" rows="5" id="comment"
+                                 name="Massage"></textarea>
+                              <div class="send_bt"><a href="#">SEND</a></div>
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+                  <!-- order section start -->
+                  <div class="order_section">
+                     <div class="order_taital_main">
+                        <h1 class="order_taital">Order Best food at time</h1>
+                        <div class="order_bt"><a href="#">Order Now</a></div>
+                     </div>
+                  </div>
+                  <!-- order section end -->
+               </div>
+            </div>
          </div>
+         <!-- contact section end -->
+         <!-- footer section start -->
+         <div class="footer_section">
+            <div class="container">
+               <div class="footer_sectio_2">
+                  <div class="row">
+                     <div class="col-lg-3 col-md-6">
+                        <h2 class="footer_logo">Foodfinda</h2>
+                        <p class="footer_text">t is a long established fact that a reader will be distracted by the
+                           readable content of a page when looking at its layout. The point of </p>
+                     </div>
+                     <div class="col-lg-3 col-md-6">
+                        <h2 class="useful_text">Navigation</h2>
+                        <div class="footer_menu">
+                           <ul>
+                              <li class="active"><a href="index.html">Home</a></li>
+                              <li><a href="about.html">About</a></li>
+                              <li><a href="location.html">Location</a></li>
+                              <li><a href="service.html">Services</a></li>
+                              <li><a href="features.html">Features</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-lg-3 col-md-6">
+                        <h2 class="useful_text">Contact Info</h2>
+                        <p class="address_text">Office Address</p>
+                        <div class="map_icon"><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i><span
+                                 class="padding_left15">Loram ipusm New York, NY 36524</span></a></div>
+                        <p class="address_text">Customer Service:</p>
+                        <div class="map_icon"><a href="#"><i class="fa fa-phone" aria-hidden="true"></i><span
+                                 class="padding_left15">( +01 1234567890 )</span></a></div>
+                        <div class="map_icon"><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i><span
+                                 class="padding_left15">demo@gmail.com</span></a></div>
+                     </div>
+                     <div class="col-lg-3 col-md-6">
+                        <h2 class="useful_text">Discover</h2>
+                        <div class="subscribe_menu">
+                           <ul>
+                              <li><a href="#">Help</a></li>
+                              <li><a href="#">How It Works</a></li>
+                              <li><a href="#">subscribe</a></li>
+                              <li><a href="contact.html">Contact Us</a></li>
+                           </ul>
+                        </div>
+                        <div class="social_icon">
+                           <ul>
+                              <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                              <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                              <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                              <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- footer section end -->
       </div>
-      <!-- copyright section end -->
-      <!-- Javascript files-->
-      <script src="{% static 'pages/js/jquery.min.js' %}"></script>
-      <script src="{% static 'pages/js/popper.min.js' %}"></script>
-      <script src="{% static 'pages/js/bootstrap.bundle.min.js' %}"></script>
-      <script src="{% static 'pages/js/jquery-3.0.0.min.js' %}"></script>
-      <script src="{% static 'pages/js/plugin.js' %}"></script>
-      <!-- sidebar -->
-      <script src="{% static 'pages/js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
-      <script src="{% static 'pages/js/custom.js' %}"></script>
-      <!-- javascript --> 
-      <script src="{% static 'pages/js/owl.carousel.js' %}"></script>
-      <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>  
-      <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
-      <script>
-         function openNav() {
-           document.getElementById("mySidenav").style.width = "100%";
+   </div>
+   <!-- layout main section end -->
+   <!-- copyright section start -->
+   <div class="copyright_section">
+      <div class="container">
+         <p class="copyright_text">2020 All Rights Reserved. Design by <a href="https://html.design">Free html
+               Templates</a></p>
+      </div>
+   </div>
+   <!-- copyright section end -->
+   <!-- Javascript files-->
+   <script src="{% static 'pages/js/jquery.min.js' %}"></script>
+   <script src="{% static 'pages/js/popper.min.js' %}"></script>
+   <script src="{% static 'pages/js/bootstrap.bundle.min.js' %}"></script>
+   <script src="{% static 'pages/js/jquery-3.0.0.min.js' %}"></script>
+   <script src="{% static 'pages/js/plugin.js' %}"></script>
+   <!-- sidebar -->
+   <script src="{% static 'pages/js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+   <script src="{% static 'pages/js/custom.js' %}"></script>
+   <!-- javascript -->
+   <script src="{% static 'pages/js/owl.carousel.js' %}"></script>
+   <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+   <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+   <script>
+      function openNav() {
+         document.getElementById("mySidenav").style.width = "100%";
+      }
+
+      function closeNav() {
+         document.getElementById("mySidenav").style.width = "0";
+      }
+   </script>
+   {% block javascript %}
+   <script>
+      /*
+          On submiting the form, send the POST ajax
+          request to server and after successfull submission
+          display the object.
+      */
+      $("#download-form").submit(function (e) {
+         // preventing from page reload and default actions
+         e.preventDefault();
+         // serialize the data for sending the form data.
+         var serializedData = {};
+         serializedData["csrfmiddlewaretoken"] = '{{ csrf_token }}';
+         const url = $("input[name=youtube-url]").val();
+         const input = $('input[name=youtube-url]')[0];
+
+         if (url == "") {
+            $("#error_msg").text("Please input url");
+            return;
          }
+         /*const urlRegex = /^((http(s?)?):\/\/)?([wW]{3}\.)?[a-zA-Z0-9\-.]+\.[a-zA-Z]{2,}(\.[a-zA-Z]{2,})?$/g;
+         var result = url.match(urlRegex);
+
+         if (!result) {
+            $("#error_msg").text("Please input valid url");
+            return;
+         }*/
+
+         const youtubeRegex = /^(http(s)?:\/\/)?((w){3}.)?youtu(be|.be)?(\.com)?\/.+/;
+         result = url.match(youtubeRegex);
+
+         if (!result) {
+            $("#error_msg").text("Please input valid youtube url");
+            return;
+         }
+
+         $("#error_msg").text("");
+         serializedData["url"] = url;
          
-         function closeNav() {
-           document.getElementById("mySidenav").style.width = "0";
-         }
-      </script> 
-   </body>
+         $('#submitBtn').prop('disabled', true);
+         // make POST ajax call
+         $.ajax({
+            type: 'POST',
+            url: "{% url 'post_url' %}",
+            data: serializedData,
+            beforeSend: function() {
+               $("body").addClass("loading"); 
+            },
+            complete: function() {
+               $("body").removeClass("loading"); 
+            },
+            success: function (response) {
+               $(".service_section").html(response);
+               /*// on successfull creating object
+               // 1. clear the form.
+               $("#friend-form").trigger('reset');
+               // 2. focus to nickname input 
+               $("#id_nick_name").focus();
+ 
+               // display the newly friend to table.
+               var instance = JSON.parse(response["instance"]);
+               var fields = instance[0]["fields"];
+               $("#my_friends tbody").prepend(
+                   `<tr>
+                   <td>${fields["nick_name"]||""}</td>
+                   <td>${fields["first_name"]||""}</td>
+                   <td>${fields["last_name"]||""}</td>
+                   <td>${fields["likes"]||""}</td>
+                   <td>${fields["dob"]||""}</td>
+                   <td>${fields["lives_in"]||""}</td>
+                   </tr>`
+               )*/
+               $('#submitBtn').prop('disabled', false);
+               $("html, body").animate(
+                  {
+                     scrollTop: $(".service_section").offset().top - 100
+                  },
+                  20 // Animation duration in milliseconds
+               );
+            },
+            error: function (response) {
+               // alert the error if any error occured
+               $("#error_msg").text("There was an error");
+               $('#submitBtn').prop('disabled', false);
+            }
+         })
+      })
+   </script>
+   {% endblock javascript %}
+</body>
+
 </html>
