@@ -49,8 +49,5 @@ def url_view(request, *args, **kwargs):
                         list_video.append(new_format)
                         videos[format.get('height')] = list_video
             updated_info.append((info, audio, video, videos))
-    f = open("infor.json", "w")
-    f.write(str(updated_info))
-    f.close()
     print(updated_info)
     return render(request, "pages/result.html", {"updated_info": updated_info})
