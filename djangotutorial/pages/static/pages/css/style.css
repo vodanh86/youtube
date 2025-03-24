@@ -120,7 +120,7 @@ h3 a,
 h4 a,
 h5 a,
 h6 a {
-    color: #212121;
+    color: blue;
     text-decoration: none!important;
     opacity: 1
 }
@@ -622,7 +622,6 @@ input.form-control::placeholder {
 .service_box {
     width: 100%;
     height: auto;
-    border: 1px solid #ffffff;
     margin-top: 20px;
 }
 
@@ -722,7 +721,7 @@ input.form-control::placeholder {
     float: left;
     font-size: 16px;
     color: #f8f8f8;
-    margin: 15px 0px 0px 0px;
+    margin: 7px 0px 7px 0px;
 }
 
 .readmore_btn {

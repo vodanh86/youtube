@@ -132,8 +132,10 @@
                            <div class="col-md-12">
                               <h1 class="banner_taital">Copy the link you want to download from</h1>
                               <h1 class="banner_text">YOUTUBE</h1>
-                              
-                              <div class="ordernow_bt"><h4 class="customer_text" id="error_msg"></h4></div>
+
+                              <div class="ordernow_bt">
+                                 <h4 class="customer_text" id="error_msg"></h4>
+                              </div>
                               <div class="banner_main">
                                  <div class="dropdown">
                                     <button class="btn btn-secondary dropdown-toggle" type="button"
@@ -149,7 +151,7 @@
                                     <!-- Another variation with a button -->
                                     <div class="input-group">
                                        <input type="text" name="youtube-url" class="form-control"
-                                          placeholder="Download">
+                                          placeholder="Keyword or Youtube URL">
                                        <div class="input-group-append">
                                           <button class="btn btn-secondary" type="button"
                                              style="background-color: #ffffff; border-color:#ffffff ">
@@ -159,11 +161,11 @@
                                     </div>
                                  </div>
                               </div>
-                              
+
                               <div class="ordernow_bt"><input type="submit" class="btn btn-primary" id="submitBtn"
                                     value="Download Now" />
                               </div>
-                              
+
                            </div>
                         </div>
                      </div>
@@ -473,39 +475,39 @@
          const input = $('input[name=youtube-url]')[0];
 
          if (url == "") {
-            $("#error_msg").text("Please input url");
+            $("#error_msg").text("Please input keyword or url");
             return;
          }
-         /*const urlRegex = /^((http(s?)?):\/\/)?([wW]{3}\.)?[a-zA-Z0-9\-.]+\.[a-zA-Z]{2,}(\.[a-zA-Z]{2,})?$/g;
-         var result = url.match(urlRegex);
+         const urlRegex = /^(https?:\/\/)?([\w-]+\.)+[\w-]+(\/[\w-]*)*$/;
+         var result = urlRegex.test(url);
 
-         if (!result) {
-            $("#error_msg").text("Please input valid url");
+         if (result && !url.includes("youtube.com")) {
+            $("#error_msg").text("Please input valid youtube url");
             return;
-         }*/
+         }
 
-         const youtubeRegex = /^(http(s)?:\/\/)?((w){3}.)?youtu(be|.be)?(\.com)?\/.+/;
+         /*const youtubeRegex = /^(http(s)?:\/\/)?((w){3}.)?(m.)youtu(be|.be)?(\.com)?\/.+/;
          result = url.match(youtubeRegex);
 
          if (!result) {
             $("#error_msg").text("Please input valid youtube url");
             return;
          }
-
+*/
          $("#error_msg").text("");
          serializedData["url"] = url;
-         
+
          $('#submitBtn').prop('disabled', true);
          // make POST ajax call
          $.ajax({
             type: 'POST',
             url: "{% url 'post_url' %}",
             data: serializedData,
-            beforeSend: function() {
-               $("body").addClass("loading"); 
+            beforeSend: function () {
+               $("body").addClass("loading");
             },
-            complete: function() {
-               $("body").removeClass("loading"); 
+            complete: function () {
+               $("body").removeClass("loading");
             },
             success: function (response) {
                $(".service_section").html(response);

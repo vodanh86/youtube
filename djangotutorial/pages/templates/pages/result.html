@@ -1,14 +1,18 @@
 {% load static %}
+{%for info in updated_info%}
 <div class="blog_section_2 layout_padding">
     <div class="container">
        <div class="row">
           <div class="col-md-6">
-             <div class="blog_img"><img src="{{info.thumbnail}}"></div>
+             <div class="blog_img">
+               <iframe width="520" height="315"
+               src="https://www.youtube.com/embed/{{ info.0.id }}">
+               </iframe>></div>
           </div>
           <div class="col-md-6">
              <div class="blog_taital_main">
-                <h1 class="blog_text">{{ info.title }}</h1>
-                <p class="lorem_text"> {{ info.description|slice:":400" }}{% if info.description|length > 100 %}...{% endif %}</p>
+                <h1 class="blog_text"><a href="{{info.0.webpage_url }}">{{ info.0.title }}</a></h1>
+                <p class="lorem_text"> {{ info.0.description|slice:":400" }}{% if info.0.description|length > 100 %}...{% endif %}</p>
              </div>
           </div>
        </div>
@@ -24,46 +28,43 @@
        <div class="row">
           <div class="col">
              <div class="service_box">
-                <div class="breakfast_img"><img src="{% static 'pages/images/breakfast-img.png' %}"></div>
+                <div class="breakfast_img"><img src="{% static 'pages/images/M4A.png' %}"></div>
              </div>
-             <h4 class="breakfast_text">Breakfast</h4>
-             <div class="seemore_bt"><a href="#">See More</a></div>
+             <h4 class="breakfast_text">Audio</h4>
+             <p class="lorem_text">File type: M4A</p>
+             <p class="lorem_text">Audio: Yes</p>
+             <p class="lorem_text">Height: N/A</p>
+             <p class="lorem_text">File size: {{info.1.2}}</p>
+             <br/>
+             <div class="seemore_bt"><a href="{{info.1.3}}"  target="_blank">Download</a></div>
           </div>
           <div class="col">
              <div class="service_box">
-                <div class="breakfast_img"><img src="{% static 'pages/images/delivery-img.png' %}"></div>
+                <div class="breakfast_img"><img src="{% static 'pages/images/360.png' %}"></div>
              </div>
-             <h4 class="breakfast_text">Delivery</h4>
-             <div class="seemore_bt"><a href="#">See More</a></div>
+             <h4 class="breakfast_text">Video</h4>
+             <p class="lorem_text">File type: Mp4</p>
+             <p class="lorem_text">Audio: Yes</p>
+             <p class="lorem_text">Height: {{video.7}}</p>
+             <p class="lorem_text">File size: {{info.2.2}}</p>
+             <br/>
+             <div class="seemore_bt"><a href="{{info.2.3}}"  target="_blank">Download</a></div>
           </div>
+          {% for height, video_list in info.3.items %}
           <div class="col">
              <div class="service_box">
-                <div class="breakfast_img"><img src="{% static 'pages/images/dinner-img.png' %}"></div>
+                <div class="breakfast_img"><img src="{% static 'pages/images/' %}{{ height }}NA.png"></div>
              </div>
-             <h4 class="breakfast_text">Dinner</h4>
-             <div class="seemore_bt"><a href="#">See More</a></div>
+             <h4 class="breakfast_text">Video</h4>
+             <p class="lorem_text">File type: Mp4</p>
+             <p class="lorem_text">Audio: No</p>
+             <p class="lorem_text">Height: {{height}}</p>
+             <p class="lorem_text">File size: {{info.2.2}}</p>
+             <br/>
+             <div class="seemore_bt"><a href="{{info.2.3}}"  target="_blank">Download</a></div>
           </div>
-          <div class="col">
-             <div class="service_box">
-                <div class="breakfast_img"><img src="{% static 'pages/images/coffee-img.png' %}"></div>
-             </div>
-             <h4 class="breakfast_text">Coffee</h4>
-             <div class="seemore_bt"><a href="#">See More</a></div>
-          </div>
-          <div class="col">
-             <div class="service_box">
-                <div class="breakfast_img"><img src="{% static 'pages/images/alcohol-img.png' %}"></div>
-             </div>
-             <h4 class="breakfast_text">Alcohol</h4>
-             <div class="seemore_bt"><a href="#">See More</a></div>
-          </div>
-          <div class="col">
-             <div class="service_box">
-                <div class="breakfast_img"><img src="{% static 'pages/images/diningtable-img.png' %}"></div>
-             </div>
-             <h4 class="breakfast_text">Diningtable</h4>
-             <div class="seemore_bt"><a href="#">See More</a></div>
-          </div>
+          {% endfor %}
        </div>
     </div>
  </div>
+ {%endfor%}
