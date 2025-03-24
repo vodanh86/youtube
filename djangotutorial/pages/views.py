@@ -40,7 +40,7 @@ def url_view(request, *args, **kwargs):
                             format.get('height')]
                 if format.get('ext') == 'm4a':
                     audio = new_format
-                if format.get('ext') == 'mp4' and format.get('resolution').find("audio") == -1:
+                if format.get('ext') == 'mp4' and format.get('resolution').find("audio") == -1 and format.get("url").find("manifest") == -1:
                     print(format.get('acodec'))
                     if format.get('acodec') != "none":
                         video = new_format
