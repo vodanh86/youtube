@@ -1257,4 +1257,7 @@ body.loading{
 body.loading .overlay{
     display: block;
 }
+.responsive-iframe {
+    max-width: 100%;
+}
 /* copyright section end 
