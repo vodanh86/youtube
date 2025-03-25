@@ -7,13 +7,14 @@ import validators
 
 
 def home_view(request, *args, **kwargs):
+    url = request.GET.get('url', "")
     # Lấy tất cả video từ cơ sở dữ liệu
     videos = Video.objects.all()
 
     # Lấy 5 video cuối cùng
     last_5_videos = videos.order_by('-id')[:5]
 
-    return render(request, "pages/index.html", {"videos": last_5_videos})
+    return render(request, "pages/index.html", {"videos": last_5_videos, "url" : url})
 
 # Create your views here.
 
@@ -21,7 +22,6 @@ def home_view(request, *args, **kwargs):
 def url_view(request, *args, **kwargs):
     url = request.POST['url']
     ydl_opts = {
-        "default-search": "ytsearch",
     }
 
     with YoutubeDL(ydl_opts) as ydl:

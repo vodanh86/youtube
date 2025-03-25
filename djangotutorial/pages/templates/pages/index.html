@@ -73,7 +73,7 @@
 <body>
    <div class="overlay"></div>
    <!-- header section start -->
-   <div class="container-fluid">
+   <div class="container-fluid" >
       <div class="header_section">
          <div class="container">
             <nav class="navbar navbar-light bg-light justify-content-between">
@@ -100,7 +100,7 @@
    </div>
    <!-- header section end -->
    <!-- layout main section start -->
-   <div class="container-fluid">
+   <div class="container-fluid" style="padding: 0px;">
       <div class="layout_main">
          <!-- banner section start -->
          <div class="banner_section">
@@ -150,7 +150,7 @@
                                  <div class="main">
                                     <!-- Another variation with a button -->
                                     <div class="input-group">
-                                       <input type="text" name="youtube-url" class="form-control"
+                                       <input type="text" name="youtube-url" class="form-control" value="{{url}}"
                                           placeholder="Keyword or Youtube URL">
                                        <div class="input-group-append">
                                           <button class="btn btn-secondary" type="button"
@@ -193,15 +193,15 @@
                <div class="row">
                   {%for video in videos%}
                   <div class="col-md-6">
-                     <div class="blog_img"><iframe class="col-lg-12 col-md-12 col-sm-12" height="315"
+                     <div class="blog_img"><iframe class="col-lg-12 col-md-12 col-sm-12" style="border:0" height="315"
                         src="https://www.youtube.com/embed/{{ video.videoId }}">
                         </iframe>></div>
                   </div>
                   <div class="col-md-6">
                      <div class="blog_taital_main">
-                        <h1 class="blog_text">{{video.title}}</h1>
+                        <h1 class="blog_text"><a href="{{video.link}}" target="_blank">{{video.title}}</a></h1>
                         <p class="lorem_text">{{ video.description|slice:":400" }}{% if video.description|length > 400 %}...{% endif %}</p>
-                        <div class="readmore_btn"><a href="#">Read More</a></div>
+                        <div class="readmore_btn"><a href="/?url={{video.link}}">Download</a></div>
                      </div>
                   </div>
                   {%endfor%}
