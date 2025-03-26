@@ -37,6 +37,7 @@ def url_view(request, *args, **kwargs):
             audio = []
             video = {}
             videos = {}
+            heights = {}
             for format in formats:
                 new_format = [format.get('ext'),
                               format.get('filesize'),
@@ -49,6 +50,9 @@ def url_view(request, *args, **kwargs):
                               format.get('height')]
                 if format.get('ext') == 'm4a':
                     audio = new_format
+                if format.get('ext') == 'mp4' and format.get('resolution').find("audio") == -1:
+                    if format.get('height'):
+                        heights[format.get('height')] = 1
                 if format.get('ext') == 'mp4' and format.get('resolution').find("audio") == -1 and format.get("url").find("manifest") == -1:
                     print(format.get('acodec'))
                     if format.get('acodec') != "none":
@@ -58,7 +62,9 @@ def url_view(request, *args, **kwargs):
                         list_video = videos.get(format.get('height'), [])
                         list_video.append(new_format)
                         videos[format.get('height')] = list_video
-            updated_info.append((info, audio, video, videos))
+                print(videos)
+                print(heights)
+            updated_info.append((info, audio, video, videos, heights))
 
         # add into db
         info = updated_info[0][0]
