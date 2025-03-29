@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from yt_dlp import YoutubeDL, utils
 from .models import Video
+from django.conf import settings
 import validators
 import json
 # Create your views here.
@@ -23,13 +24,13 @@ def download_url(request, *args, **kwargs):
     format = request.POST['format']
     ydl_opts = {
         'format': format,
-        'outtmpl': 'static/videos/%(title)s.mp4',
+        'outtmpl': settings.VIDEO_PATH + '/static/videos/%(title)s.mp4',
         'get-filename': True,
     }
     file_path = ""
     with YoutubeDL(ydl_opts) as ydl:
         info = ydl.extract_info(url, download=False)
-        file_path = "/" + ydl.prepare_filename(info)
+        file_path = ydl.prepare_filename(info).replace(settings.VIDEO_PATH, "")
         ydl.process_info(info)  # starts the download
     
     response_data = {
