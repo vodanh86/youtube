@@ -24,7 +24,7 @@ def download_url(request, *args, **kwargs):
     format = request.POST['format']
     ydl_opts = {
         'format': format,
-        'outtmpl': settings.VIDEO_PATH + '/static/videos/%(title)s.mp4',
+        'outtmpl': settings.VIDEO_PATH + '/static/videos/%(title)s_%(format)s.mp4',
         'get-filename': True,
     }
     file_path = ""
