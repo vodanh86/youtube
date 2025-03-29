@@ -523,6 +523,36 @@
             }
          })
       })
+
+      const download_url = function(url, format, e) {
+         e.preventDefault();
+         var serializedData = {};
+         serializedData["csrfmiddlewaretoken"] = '{{ csrf_token }}';
+         serializedData["format"] = format;
+         serializedData["url"] = url;
+
+         $('#submitBtn').prop('disabled', true);
+         // make POST ajax call
+         $.ajax({
+            type: 'POST',
+            url: "{% url 'download_url' %}",
+            data: serializedData,
+            beforeSend: function () {
+               $("body").addClass("loading");
+            },
+            complete: function () {
+               $("body").removeClass("loading");
+            },
+            success: function (response) {
+               window.open(response["url"], "_blank");
+            },
+            error: function (response) {
+               // alert the error if any error occured
+               $("#error_msg").text("There was an error");
+               $('#submitBtn').prop('disabled', false);
+            }
+         })
+      }
    </script>
    {% endblock javascript %}
 </body>

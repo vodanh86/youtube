@@ -68,7 +68,7 @@
                <div>&nbsp;</div>
                <br/>
                {%endif%}
-               <div class="seemore_bt"><a href="{{ instant_video.0.3 }}"  target="_blank">Download (Audio)</a></div>
+               <div class="seemore_bt"><a href="{{ instant_video.0.3 }}" onclick="download_url('{{info.0.original_url}}', '{{info.1.8}}+{{instant_video.0.8}}', event)" target="_blank">Download (Audio)</a></div>
             </div>
             {% endwith %}
           {% endfor %}

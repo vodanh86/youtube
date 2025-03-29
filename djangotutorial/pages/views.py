@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from yt_dlp import YoutubeDL, utils
 from .models import Video
 import validators
+import json
 # Create your views here.
 
 
@@ -17,7 +18,25 @@ def home_view(request, *args, **kwargs):
     return render(request, "pages/index.html", {"videos": last_5_videos, "url" : url})
 
 # Create your views here.
-
+def download_url(request, *args, **kwargs):
+    url = request.POST['url']
+    format = request.POST['format']
+    ydl_opts = {
+        'format': format,
+        'outtmpl': 'static/videos/%(title)s.mp4',
+        'get-filename': True,
+    }
+    file_path = ""
+    with YoutubeDL(ydl_opts) as ydl:
+        info = ydl.extract_info(url, download=False)
+        file_path = "/" + ydl.prepare_filename(info)
+        ydl.process_info(info)  # starts the download
+    
+    response_data = {
+        'message': 'Video downloaded successfully!',
+        'url': file_path,
+    }
+    return HttpResponse(json.dumps(response_data), content_type="application/json")
 
 def url_view(request, *args, **kwargs):
     url = request.POST['url']
@@ -47,7 +66,8 @@ def url_view(request, *args, **kwargs):
                               format.get('acodec'),
                               format.get('vcodec'),
                               format.get('resolution'),
-                              format.get('height')]
+                              format.get('height'),
+                              format.get('format_id'),]
                 if format.get('ext') == 'm4a':
                     audio = new_format
                 if format.get('ext') == 'mp4' and format.get('resolution').find("audio") == -1:
@@ -56,14 +76,11 @@ def url_view(request, *args, **kwargs):
                 if format.get('ext') == 'mp4' and format.get('resolution').find("audio") == -1 and format.get("url").find("manifest") == -1:
                     print(format.get('acodec'))
                     if format.get('acodec') != "none":
-                        print(new_format)
                         video = new_format
                     else:
                         list_video = videos.get(format.get('height'), [])
                         list_video.append(new_format)
                         videos[format.get('height')] = list_video
-                print(videos)
-                print(heights)
             updated_info.append((info, audio, video, videos, heights))
 
         # add into db
