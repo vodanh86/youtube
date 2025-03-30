@@ -606,6 +606,7 @@ input.form-control::placeholder {
 
 .service_taital {
     width: 100%;
+    padding-top:30px;
     float: left;
     font-size: 50px;
     color: #fefbfb;
@@ -616,7 +617,6 @@ input.form-control::placeholder {
 .service_section_2 {
     width: 100%;
     float: left;
-    padding-top: 30px;
 }
 
 .service_box {
@@ -698,7 +698,7 @@ input.form-control::placeholder {
     float: left;
     background-image: url(../images/about-bg.png);
     height: auto;
-    padding: 2px 0px 10px 0pc;
+    /*padding: 2px 0px 10px 0pc;*/
     background-size: 100%;
     background-repeat: no-repeat;
 }

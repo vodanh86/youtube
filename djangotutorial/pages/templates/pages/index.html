@@ -194,7 +194,7 @@
                   {%for video in videos%}
                   <div class="col-md-6">
                      <div class="blog_img"><iframe class="col-lg-12 col-md-12 col-sm-12" style="border:0" height="315"
-                        src="https://www.youtube.com/embed/{{ video.videoId }}">
+                        src="https://www.youtube.com/embed/{{ video.videoId }}" referrerpolicy="strict-origin-when-cross-origin">
                         </iframe>></div>
                   </div>
                   <div class="col-md-6">
@@ -531,7 +531,6 @@
          serializedData["format"] = format;
          serializedData["url"] = url;
 
-         $('#submitBtn').prop('disabled', true);
          // make POST ajax call
          $.ajax({
             type: 'POST',
@@ -549,7 +548,6 @@
             error: function (response) {
                // alert the error if any error occured
                $("#error_msg").text("There was an error");
-               $('#submitBtn').prop('disabled', false);
             }
          })
       }

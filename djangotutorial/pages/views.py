@@ -49,8 +49,7 @@ def url_view(request, *args, **kwargs):
             info_videos = [ydl.extract_info(url, download=False)]
         else:
             info_videos = ydl.extract_info(
-                f"ytsearch:{url}", download=False).get('entries')
-
+                f"ytsearch5:{url}", download=False).get('entries')
         updated_info = []
         for info in info_videos:
             formats = info.get('formats')

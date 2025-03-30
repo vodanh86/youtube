@@ -7,12 +7,13 @@
           <div class="col-md-6">
              <div class="blog_img">
                <iframe class="col-lg-12 col-md-12 col-sm-12" height="315" style="border:0"
-               src="https://www.youtube.com/embed/{{ info.0.id }}">
+               src="https://www.youtube.com/embed/{{ info.0.id }}" referrerpolicy="strict-origin-when-cross-origin">
                </iframe></div>
           </div>
           <div class="col-md-6">
              <div class="blog_taital_main">
                 <h1 class="blog_text"><a href="{{info.0.webpage_url }}" target="_blank">{{ info.0.title }}</a></h1>
+                <p class="lorem_text" style="color:red"><b>Upload date: </b>{{ info.0.upload_date|format_date }}</p>
                 <p class="lorem_text"> {{ info.0.description|slice:":400" }}{% if info.0.description|length > 100 %}...{% endif %}</p>
              </div>
           </div>
@@ -75,4 +76,5 @@
        </div>
     </div>
  </div>
+ <hr/>
  {%endfor%}
