@@ -58,6 +58,21 @@ def url_view(request, *args, **kwargs):
             videos = {}
             heights = {}
             for format in formats:
+                height = format.get('height')
+                if height:
+                    if height > 100 and height < 200:
+                        height = 144
+                    if height > 200 and height < 300:
+                        height = 240
+                    if height > 300 and height < 400:
+                        height = 360
+                    if height > 400 and height < 500:
+                        height = 480
+                    if height > 500 and height < 800:
+                        height = 720
+                    if height > 800 and height < 1200:
+                        height = 1080
+
                 new_format = [format.get('ext'),
                               format.get('filesize'),
                               utils.format_bytes(format.get('filesize') if format.get(
@@ -66,23 +81,22 @@ def url_view(request, *args, **kwargs):
                               format.get('acodec'),
                               format.get('vcodec'),
                               format.get('resolution'),
-                              format.get('height'),
+                              height,
                               format.get('format_id'),]
                 if format.get('ext') == 'm4a':
                     audio = new_format
                 if format.get('ext') == 'mp4' and format.get('resolution').find("audio") == -1:
                     if format.get('height'):
-                        heights[format.get('height')] = 1
+                        heights[height] = 1
                 if format.get('ext') == 'mp4' and format.get('resolution').find("audio") == -1 and format.get("url").find("manifest") == -1:
                     print(format.get('acodec'))
                     if format.get('acodec') != "none":
                         video = new_format
                     else:
-                        list_video = videos.get(format.get('height'), [])
+                        list_video = videos.get(height, [])
                         list_video.append(new_format)
-                        videos[format.get('height')] = list_video
+                        videos[height] = list_video
             updated_info.append((info, audio, video, videos, heights))
-
         # add into db
         info = updated_info[0][0]
         # check id video exist
