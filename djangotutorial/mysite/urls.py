@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from pages.views import home_view, url_view, download_url
+from pages.views import home_view, url_view, download_url, api_search_video, api_search_playlist, api_download_thumbnail, api_download_video, api_playlist_items
 from django.urls import include, path
 
 urlpatterns = [
@@ -28,4 +28,9 @@ urlpatterns = [
     path('download/url', download_url, name = "download_url"),
     path("polls/", include("polls.urls")),
     path("admin/", admin.site.urls),
+    path('api/search-video/', api_search_video, name='api_search_video'),
+    path('api/search-playlist/', api_search_playlist, name='api_search_playlist'),
+    path('api/download-thumbnail/', api_download_thumbnail, name='api_download_thumbnail'),
+    path('api/download-video/', api_download_video, name='api_download_video'),
+    path('api/playlist-items/', api_playlist_items, name='api_playlist_items'),
 ]
