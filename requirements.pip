@@ -3,3 +3,5 @@ Django==3.2.25
 pytz==2025.1
 sqlparse==0.4.4
 typing-extensions==4.1.1
+yt-dlp==2025.08.20
+requests
